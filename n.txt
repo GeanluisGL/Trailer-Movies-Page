@@ -1,0 +1,90 @@
+// if ($_POST) {
+    
+
+// $imagPoster= $_POST['imagPoster'];
+// $linkerYt= $_POST['linkerYt'];
+// $movNam= $_POST['movNam'];
+// $dirMov= $_POST['dirMov'];
+// $movRes= $_POST['movRes'];
+// $preDa =$_POST['preDa'];
+// $depAct= $_POST['depAct'];  
+
+// echo $imagPoster;
+// echo $linkerYt;
+// echo $movNam;
+// echo $dirMov;
+// echo $movRes;
+// echo $preDa;
+// echo $depAct;
+// }
+
+
+    <!-- MENSAJE DESDE PHP -->
+        <?php if (isset($_SESSION['message'])) { ?>   
+           <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+        <?php $_SESSION['message']?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+         <?php
+        }?>    
+
+
+        INSERTAR
+    $sql= "INSERT INTO `trailerdato` (`ID`, `CARTELERA`, `VIDEOLINK`, `TITULO`, `DIRECTOR`, `RESUMEN`, `ESTRENO`, `ACTORES`) VALUES (NULL, 'https://static.bunnycdn.ru/i/cache/images/7/75/7513b18f2ba6e64a626ba7ed27e3da25.jpg-w380', 'https://www.youtube.com/embed/x7Krla_UxRg', 'Moon Knight', 'N/A', 'The series follows Steven Grant, a mild- mannered gift-shop employee, who becomes plagued with blackouts and memories of another life. Steven discovers he has dissociative identity disorder and shares a body with mercenary Marc Spector. As Steven/Marc\'s enemies converge upon them, they must navigate their complex identities while thrust into a deadly mystery among the powerful gods of Egypt', '2022-03-30', 'Oscar Isaac,\r\nEthan Hawke,\r\nMay Calamawy');";
+    $conexion->exec($sql);
+
+        UPDATE
+    $sql=UPDATE `trailerdato` SET `ACTORES` = 'Oscar Isaac\r\nEthan Hawke\r\nMay Calamawy.' WHERE `trailerdato`.`ID` = 1;
+    $conexion->exec($sql);
+
+        DELETE
+    $sql= DELETE FROM `trailerdato` WHERE `trailerdato`.`ID` = 2
+    $conexion->exec($sql);
+
+
+    <button type="button" class="btn btn-primary" id="liveToastBtn">
+    <img src="Img/boton-circular-plus.png" class="iconI" id="adjs">
+    </button>
+
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">Bootstrap</strong>
+      <small>Now</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+    <form class="formAd" action="add.php" method="POST">
+
+    <h1>Agregar Pelicula</h1><br>
+    <label for="">Cartelera</label>
+    <img src="" alt="">
+    <input autocomplete="off"  type="url" placeholder="Url image" class="imagPoster" name="imagPoster" required/>
+
+    <label for="">Link Video</label>
+    <input autocomplete="off" type="url" placeholder="Link Trailer (Embend)" class="linkerYt" name="linkerYt" required/>
+
+    <label for="">Título</label>
+    <input autocomplete="off" type="text" placeholder="Título" class="movNam" name="movNam" required/>
+
+    <label for="">Director</label>
+    <input autocomplete="off" type="text" placeholder="Director" class="dirMov" name="dirMov" required/>
+
+    <label for="">Reseña</label>
+    <input autocomplete="off" type="text" placeholder="Reseña" class="movRes" name="movRes" required/>
+
+    <label for="">Estreno</label>
+    <input autocomplete="off" type="date" placeholder="Fecha de Estreno" class="preDa" name="preDa" required/>
+
+    <label for="">Actores</label>
+    <input autocomplete="off" type="text" placeholder="Actores" class="depAct" name="depAct" required/>
+
+    <input type="submit" value="Add" name="add" onclick=".save()" class="btn btn-success">
+    <input type="reset" value="Cancel" onclick="removePop()" class="btn btn-danger">
+
+
+
+
+</form>
