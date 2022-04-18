@@ -55,7 +55,7 @@ if (isset($_GET['id'])) {
         <h1 class="hh" > <?php echo $movNam?></h1><br>
         <center>
             <iframe class="fram" src="<?php echo $linkerYt?>" 
-            frameborder="0"  
+            frameborder="0"  style=" width: 50%;"
             ></iframe>
         </center>
        
