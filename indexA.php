@@ -5,7 +5,7 @@
         
  <nav class="navbar navbar-expand-lg navbar-light bg-secundary">
     <div class="container-fluid">
-      <a class="button is-danger" href="index.php" ><i class="fa-solid fa-arrow-right-from-bracket"></i> </a>
+      <a class="button is-danger" style="text-decoration: none;" href="index.php" ><i class="fa-solid fa-arrow-right-from-bracket"></i> </a>
     <div class="collapse navbar-collapse" id="navbarNav">
  
         <a class="btn" id="liveToastBtn">
@@ -128,26 +128,48 @@
 </div>
 
 
-<div class="carad">
-  <form action="">
-    <center>
+<div class="Ca">
+ 
+    <br>
     <select name="sele" id="">
-    <?php
+
+              <option value="null">Cartelera 1</option>
+             <?php
                 $query = "SELECT * FROM `trailerdato` ORDER BY `trailerdato`.`Time_Published` DESC";
                 $result_trailer=mysqli_query($conn, $query);
 
                 while ($row = mysqli_fetch_array($result_trailer)) { ?>
                 
-             <option value=""> <a href="movI.php?id=<?php echo $row['ID']?>">
-                    <li><label  src="<?php echo $row['TITULO']?>"></label></li> 
-            </a> </option>                   
+              <option value="<?php echo $row['TITULO']?>"> 
                     
-            
-            <?php    }
-    ?>        </select>
- </center>
-  </form>
-</div>
+              <?php echo $row['TITULO']?>
+              </option>                   
+                                
+            <?php } ?>
+      </select> 
+      <br>
+      <br>
+    
+      <select name="sele" id="">
+
+              <option value="null">Cartelera 2</option>
+             <?php
+                $query = "SELECT * FROM `trailerdato` ORDER BY `trailerdato`.`Time_Published` DESC";
+                $result_trailer=mysqli_query($conn, $query);
+
+                while ($row = mysqli_fetch_array($result_trailer)) { ?>
+                
+              <option value="<?php echo $row['TITULO']?>"> 
+                    
+              <?php echo $row['TITULO']?>
+              </option>                   
+                                
+            <?php } ?>
+      </select> 
+   
+  
+
+    </div>
      
 
 <!-- CONTAINER POP OUT ADDER -->

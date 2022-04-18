@@ -125,7 +125,7 @@ footer {
 }
 
 .hh {
-    color: rgb(250, 250, 250);
+    color: white;
     text-align: center;
     font-family:'Archivo Black', sans-serif;
 }
@@ -147,4 +147,16 @@ footer {
 
 .inff h2{
     color: antiquewhite;
+}
+
+.sele{
+    border-radius: 30px;
+    margin: 2%;
+}
+
+.Ca{
+    background-color: bisque;
+    padding: 5%;
+    margin: 2%;
+    border-radius: 10px;
 }
