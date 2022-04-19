@@ -1,5 +1,7 @@
 <?php
+// include, agrega la conexion a la base de datos
 include('DB.php');
+//DECLARA VARIABLE
 $imagPoster="";
 $linkerYt= "";
 $movNam= "";
@@ -8,10 +10,13 @@ $movRes= "";
 $preDa ="";
 $depAct= "";
 
+//Si existe un metodo get, tomara la variable Id
 if (isset($_GET['id'])) {
     $ID = $_GET['id'];
 
+    //COMO ES UN UPDATE SE REALIZA LA SELECCION EN LA BASE DE DATOS EN POR MEDIO DEL ID
     $query= "SELECT * FROM `trailerdato` WHERE `trailerdato`.`ID` = $ID";
+    // NUEVAMENTE GUARDA LA SENTENCIA EN UNA VARIABLE DE PHP Y LA EJECUTA EN POR MEDIO DE LA CONEXION.
     $result = mysqli_query($conn, $query);
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_array($result);
