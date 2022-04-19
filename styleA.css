@@ -39,6 +39,9 @@ margin-right:1% ;
     transform: scale(1.2);
 }
 
+.table {
+    border-radius: 10px;
+}
 
 .tablelist p{
     color: white;
@@ -51,6 +54,7 @@ margin-right:1% ;
 .tablelist th, td{
  color: black;
 text-align: justify;
+border-radius: 10px;
 
 ;
 }
@@ -150,13 +154,13 @@ footer {
 }
 
 .sele{
-    border-radius: 30px;
-    margin: 2%;
+
 }
 
 .Ca{
-    background-color: bisque;
+    background-color: white;
     padding: 5%;
     margin: 2%;
     border-radius: 10px;
+
 }

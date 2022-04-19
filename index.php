@@ -42,12 +42,6 @@
                     <div class="carousel-item">
                         <img src="Img/las3.jfif" class="img-fluid" alt="">
                     </div>
-                    <div class="carousel-item">
-                        <img src="Img/las3.jfif" class="img-fluid" alt="">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="Img/las3.jfif" class="img-fluid" alt="">
-                    </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -146,7 +146,7 @@
               </option>                   
                                 
             <?php } ?>
-      </select> 
+    </select> 
       <br>
       <br>
     
@@ -166,8 +166,27 @@
                                 
             <?php } ?>
       </select> 
-   
-  
+      <br>
+      <br>
+     
+      <select name="sele" id="">
+
+        <option value="null">Cartelera 3</option>
+        <?php
+          $query = "SELECT * FROM `trailerdato` ORDER BY `trailerdato`.`Time_Published` DESC";
+          $result_trailer=mysqli_query($conn, $query);
+
+          while ($row = mysqli_fetch_array($result_trailer)) { ?>
+          
+        <option value="<?php echo $row['TITULO']?>"> 
+              
+        <?php echo $row['TITULO']?>
+        </option>                   
+                          
+        <?php } ?>
+      </select> 
+<br>            
+
 
     </div>
      
