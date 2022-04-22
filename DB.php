@@ -2,7 +2,7 @@
 
 <?php
 
-session_start();
+// session_start();
 
 // Busca variables que conectan a la base de datos
 $servedor="localhost";

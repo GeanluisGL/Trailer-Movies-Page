@@ -115,6 +115,7 @@ footer {
     padding: 2%;
 } 
 .pag{
+    justify-content: center;
     display: flex;
     flex-direction: row;
 }
@@ -126,7 +127,7 @@ footer {
   border-radius : 6px;
   position:absolute;
   top: 0%;
-  left: 81%;
+  left: 50%;
   transform: translate(-50%, -50%) scale(0.1);
   visibility: hidden;
   transition: transform 0.4s, top 0.4s;
@@ -146,11 +147,11 @@ footer {
     margin-right: 2%;
   }
 
-  .formC  label {
+  .formCa label {
     color: white;
   }
   
- .formC  input[type=text], .formC input[type=password]{
+ .formCa  input[type=text], .formCa input[type=password]{
     width: 100%;
  padding: 5px;
  margin: 2px 0 20px 0;
@@ -158,12 +159,12 @@ footer {
  background: #f1f1f1;
  }
 
-.formC input:invalid {
-  border: 2px dashed red;
+.formCa input:invalid {
+  border: 2px solid red;
 }
 
-.formC input:valid {
-  border: 2px dashed rgb(0, 255, 98);
+.formCa input:valid {
+  border: 2px solid rgb(0, 255, 98);
 }
 
  .poput button{
@@ -175,5 +176,12 @@ align-items: center;
   font-family:'Archivo Black', sans-serif;
 }
 
- .inp p{;
- }
+.bad {
+	text-align: center;
+	width: 100%;
+	padding: 12px;
+	background-color: #a22;
+	color: #fff;
+  float: inline-start;
+}
+

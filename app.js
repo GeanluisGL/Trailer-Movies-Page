@@ -1,34 +1,38 @@
-
+// ANIMACION
 let opener = document.getElementById("popup")
 
+
 function logg(){
+
   opener.classList.add("pop_op")
 
 }
 
-
+// REMUEVE
 function removePop(){
   opener.classList.remove("pop_op")
 }
 
+// DEFINIMOS FUNCION
 
-function login(){
+
+function funLog(){
+  // Declaramos el usuario y la contraseña
   let user = "edgemanufacture"
-  let pasw = "0000"
+  let pasw = "1111"
 
-  let username = document.querySelector(".username").value;
-  let password = document.querySelector(".password").value;
+  // Se recoge los datos introducidos por el usuario
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("password").value;
 
+
+//SI los datos introduccion son iguales a los declarados
   if (username==user && password==pasw) {
-  
-    // swal({
-    //       title:"Bienvenido administrador!!",
-    //       text: "Administrador", text:"Espere 3 segundos"
-    //     });
-    setTimeout (admacs, 3000);
+    alert("Hola")
+    //Pondra un timer para  y llamara la funcion de 
+    setTimeout(admacs, 3000);
   }
     else {   
-      swal('Ah ocurrido un error, reintente usuario y contraseña')
       setTimeout(closCont, 3000);
     }
 
@@ -37,15 +41,12 @@ function login(){
 
   function admacs(){
 
-    window.open("indexA.php", "_self");
-    document.getElementById(".formC").innerHTML="<form action='1_2,TESTERS/indexA.php'>"
+
+    document.getElementById("formCa").innerHTML="<form action='C:/xampp/htdocs/1_2,Testers/indexA.php'>"
 
   }
 
   function closCont(){
-    window.open("index.php", "_self");
+    swal({Text: 'Ah ocurrido un error, reintente usuario y contraseña', button: "ok",})
+     window.open("index.php", "_self");
   }
-
-
-
-// SWEET ALERT

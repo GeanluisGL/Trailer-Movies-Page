@@ -49,26 +49,19 @@
                   <input type="submit" value="Add" name="add" onclick=".save()" class="btn btn-success">
                   <input type="reset" value="Cancel" onclick="removePop()" class="btn btn-danger">
 
-
-
-
               </form>
           </div>
         </div>
 </nav>
- 
+<br>
 
-
-       <!-- MENSAJE DESDE PHP -->
+<!-- MENSAJE DESDE PHP -->
        <?php if (isset($_SESSION['message'])) { ?>   
         <div class="alert alert-secondary alert-dismissible fade show" role="alert">
         <?= $_SESSION['message']?>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-         <?php session_unset();};?>
-
-
-         
+         <?php session_unset();};?>         
 <div class="tablelist">
    <hr>
     <center>
@@ -128,75 +121,35 @@
 </div>
 
 
-<div class="Ca">
- 
-    <br>
-    <select name="sele" id="">
+  <!-- <div class="Ca">
 
-              <option value="null">Cartelera 1</option>
-             <?php
-                $query = "SELECT * FROM `trailerdato` ORDER BY `trailerdato`.`Time_Published` DESC";
-                $result_trailer=mysqli_query($conn, $query);
+    <form action="AddCar.php" method="POST">
+      <select name="sele" id="" require>
 
-                while ($row = mysqli_fetch_array($result_trailer)) { ?>
-                
-              <option value="<?php echo $row['TITULO']?>"> 
-                    
-              <?php echo $row['TITULO']?>
-              </option>                   
-                                
-            <?php } ?>
-    </select> 
-      <br>
-      <br>
-    
-      <select name="sele" id="">
-
-              <option value="null">Cartelera 2</option>
-             <?php
-                $query = "SELECT * FROM `trailerdato` ORDER BY `trailerdato`.`Time_Published` DESC";
-                $result_trailer=mysqli_query($conn, $query);
-
-                while ($row = mysqli_fetch_array($result_trailer)) { ?>
-                
-              <option value="<?php echo $row['TITULO']?>"> 
-                    
-              <?php echo $row['TITULO']?>
-              </option>                   
-                                
-            <?php } ?>
-      </select> 
-      <br>
-      <br>
-     
-      <select name="sele" id="">
-
-        <option value="null">Cartelera 3</option>
+        <option value="NULL">CARTELERA 1</option>
         <?php
-          $query = "SELECT * FROM `trailerdato` ORDER BY `trailerdato`.`Time_Published` DESC";
-          $result_trailer=mysqli_query($conn, $query);
+        $query = "SELECT * FROM `trailerdato` ORDER BY `trailerdato`.`Time_Published` DESC";
+        $result_trailer=mysqli_query($conn, $query);
 
-          while ($row = mysqli_fetch_array($result_trailer)) { ?>
-          
-        <option value="<?php echo $row['TITULO']?>"> 
-              
-        <?php echo $row['TITULO']?>
-        </option>                   
-                          
+        while ($row = mysqli_fetch_row($result_trailer)) { ?>
+    
+          <option value="<?php echo $row['1']?>"> 
+          <?php echo $row['3']?>
+          </option>                   
+                    
         <?php } ?>
       </select> 
-<br>            
+      <input type="submit" value="REGISTER  ">
+    </form>
 
-
-    </div>
-     
+  </div>-->
 
 <!-- CONTAINER POP OUT ADDER -->
 
 
 <!-- <div class="popet" id="popep">
     
-    <h1>Buscador</h1>
+    <h1>Busca        dor</h1>
     <br>
     <center><input type="search" id="buscar-pal" onkeyup="autocompletado()"></center>
     <br>

@@ -54,9 +54,11 @@ if (isset($_GET['id'])) {
   
         <h1 class="hh" > <?php echo $movNam?></h1><br>
         <center>
-            <iframe class="fram" src="<?php echo $linkerYt?>" 
+
+        <iframe width="560" height="315" src="<?php echo $linkerYt?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- <iframe class="fram" src="<?php echo $linkerYt?>" 
             frameborder="0"  style=" width: 50%;"
-            ></iframe>
+            ></iframe> -->
         </center>
        
         

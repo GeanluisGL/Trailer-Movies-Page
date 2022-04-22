@@ -12,14 +12,19 @@ $depAct= "";
 
 //Si existe un metodo get, tomara la variable Id
 if (isset($_GET['id'])) {
+    // Tomara una variable para guardar el Id seleccionado
     $ID = $_GET['id'];
 
-    //COMO ES UN UPDATE SE REALIZA LA SELECCION EN LA BASE DE DATOS EN POR MEDIO DEL ID
+    //COMO ES UN UPDATE SE REALIZA LA SELECCION EN LA BASE DE DATOS EN POR MEDIO DEL ID QUE SE GUARDO EN LA VARIABLE ANTERIOR
     $query= "SELECT * FROM `trailerdato` WHERE `trailerdato`.`ID` = $ID";
     // NUEVAMENTE GUARDA LA SENTENCIA EN UNA VARIABLE DE PHP Y LA EJECUTA EN POR MEDIO DE LA CONEXION.
     $result = mysqli_query($conn, $query);
+    // SI EXISTE UN RESULTADO MUESTRA EL USUARIO LOS DATOS A Actualizar
     if (mysqli_num_rows($result) == 1) {
+        // SI EL NUMERO ES VALIDO ALMENOS 1 VEZ ENSEÑA EL SELECCIONADO
         $row = mysqli_fetch_array($result);
+        // Recupera una fila de resultados como un array
+        // RECOGE RESULTADO 
         $imagPoster= $row['CARTELERA'];
         $linkerYt= $row['VIDEOLINK'];
         $movNam= $row['TITULO'];
@@ -39,8 +44,10 @@ if (isset($_GET['id'])) {
     };
 }
 
+    // Si existe un metodo post que se llame 'update', recoge el Id modificado 
     if (isset($_POST['update'])) {
         $id = $_GET['id'];
+        // Sube los cambios por medio del post
         $imagPoster= $_POST['imagPoster'];
         $linkerYt= $_POST['linkerYt'];
         $movNam= $_POST['movNam'];
@@ -49,6 +56,7 @@ if (isset($_GET['id'])) {
         $preDa = $_POST['preDa'];
         $depAct= $_POST['depAct'];
 
+        // SENTENCIA SQL QUE SUBE LOS DATOS QUE FUE SUBIDO POR EL POST
         $query= "UPDATE `trailerdato` SET 
         `CARTELERA` = '$imagPoster',
         `VIDEOLINK` = '$linkerYt', 
@@ -59,7 +67,10 @@ if (isset($_GET['id'])) {
         `ACTORES` = '$depAct' 
         WHERE `trailerdato`.`ID`= $id";
       
+    //   EJECUTA
         mysqli_query($conn, $query);
+        
+        // MANDA MENSAJE Y REDIRECCIONA
         $_SESSION['message'] = 'Movie Updated';
         header('Location: indexA.php');
 
@@ -79,6 +90,7 @@ if (isset($_GET['id'])) {
         <h1 class="hh" >Actualizar</h1><br>
         <label class="labb" for="">Cartelera</label>
         <img src="" alt="">
+        <!-- En cada ECO muestra lo que extrajo de la base de datos por medio de las variables -->
         <input autocomplete="off" value="<?php echo $imagPoster?>" type="url" placeholder="Url image" class="imagPoster" name="imagPoster" required/>
         <hr>
         <label class="labb" for="">Link Video</label>
@@ -99,6 +111,7 @@ if (isset($_GET['id'])) {
         <label class="labb" for="">Actores</label>
         <input autocomplete="off" value="<?php echo $depAct?>" type="text" placeholder="Actores" class="depAct" name="depAct" required/>
         <hr>
+        <!-- Al boton submit se le da un name que permite ser llamado si es apretado -->
         <input type="submit" value="Actualizar" name="update" class="btn btn-success">
         </form>
         </div>
