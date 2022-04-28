@@ -1,0 +1,2 @@
+This file is where we gonna keep the static 'part' from the page
+It means the part that didnt change
